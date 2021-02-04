@@ -19,4 +19,11 @@ public class UsersEntity {
     private String name;
     private String nick;
 
+    public UsersEntity(String name, String nick) {
+        this.name = name;
+        this.nick = nick;
+    }
+
+    public UsersEntity() {
+    }
 }

@@ -22,4 +22,10 @@ public class MessageEntity {
     private LocalDateTime dateMessage;
     private String message;
 
+
+    public MessageEntity(Long idSend, Long idReceiver, String message) {
+        this.idSend = idSend;
+        this.idReceiver = idReceiver;
+        this.message = message;
+    }
 }

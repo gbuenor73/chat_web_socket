@@ -19,29 +19,29 @@ import java.util.List;
 
 @Controller
 public class ChatController {
-//
-//    @Autowired
-//    private MajorService majorService;
-//
-//    @GetMapping("/getAllMessages")
-//    public ResponseEntity<List<MessageEntity>> getAllMessages() {
-//        return ResponseEntity.ok(this.majorService.getMessages());
-//    }
-//
-//    @PostMapping("/newMessage")
-//    public ResponseEntity<MessageEntity> insertNewMessage(@RequestBody MessageEntity usersEntity) {
-//        return ResponseEntity.ok(this.majorService.insertNewMessage(usersEntity));
-//    }
-//
-//    @GetMapping("/getAllUsers")
-//    public ResponseEntity<List<UsersEntity>> getAllUsers() {
-//        return ResponseEntity.ok(this.majorService.getUsers());
-//    }
-//
-//    @PostMapping("/newUser")
-//    public ResponseEntity<UsersEntity> getAllMessages(@RequestBody UsersEntity usersEntity) {
-//        return ResponseEntity.ok(this.majorService.insertNewUser(usersEntity));
-//    }
+
+    @Autowired
+    private MajorService majorService;
+
+    @GetMapping("/getAllMessages")
+    public ResponseEntity<List<MessageEntity>> getAllMessages() {
+        return ResponseEntity.ok(this.majorService.getMessages());
+    }
+
+    @PostMapping("/newMessage")
+    public ResponseEntity<MessageEntity> insertNewMessage(@RequestBody MessageEntity usersEntity) {
+        return ResponseEntity.ok(this.majorService.insertNewMessage(usersEntity));
+    }
+
+    @GetMapping("/getAllUsers")
+    public ResponseEntity<List<UsersEntity>> getAllUsers() {
+        return ResponseEntity.ok(this.majorService.getUsers());
+    }
+
+    @PostMapping("/newUser")
+    public ResponseEntity<UsersEntity> insertNewUser(@RequestBody UsersEntity usersEntity) {
+        return ResponseEntity.ok(this.majorService.insertNewUser(usersEntity));
+    }
 
 //    @MessageMapping("/chat/{to}")
 //    public void sendMessage(@DestinationVariable String to, MessageModel message) {
@@ -53,12 +53,24 @@ public class ChatController {
     @SendTo("/topic/public")
     public ChatMessageModel register(@Payload ChatMessageModel chatMessageModel, SimpMessageHeaderAccessor headerAccessor) {
         headerAccessor.getSessionAttributes().put("username", chatMessageModel.getSender());
+        UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
+
+        if (oneUser == null)
+            this.majorService.insertNewUser(new UsersEntity(chatMessageModel.getSender(), chatMessageModel.getSender()));
+
         return chatMessageModel;
     }
 
     @MessageMapping("chat.send")
     @SendTo("/topic/public")
     public ChatMessageModel sendMessage(@Payload ChatMessageModel chatMessageModel) {
+        UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
+
+        MessageEntity messageEntity =
+                new MessageEntity(oneUser.getId(), 3L, chatMessageModel.getContent());
+
+        this.majorService.insertNewMessage(messageEntity);
+
         return chatMessageModel;
     }
 

@@ -36,4 +36,8 @@ public class MajorService {
     public UsersEntity insertNewUser(UsersEntity usersEntity) {
         return this.userRepository.save(usersEntity);
     }
+
+    public UsersEntity getOneUser(String nick){
+        return this.userRepository.findByNick(nick);
+    }
 }
