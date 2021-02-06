@@ -35,7 +35,7 @@ SELECT
 FROM
     messages;
 
-insert into messages (id_send, id_receiver, message, dateMessage)
+insert into messages (id_send, id_receiver, message, date_message)
 values(1,1,'TESTE DE MENSAGEM', current_timestamp());
 
 SELECT
