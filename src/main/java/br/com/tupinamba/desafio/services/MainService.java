@@ -5,6 +5,7 @@ import br.com.tupinamba.desafio.entyties.UsersEntity;
 import br.com.tupinamba.desafio.model.ChatMessageModel;
 import br.com.tupinamba.desafio.repository.impl.MessageRepositoryImpl;
 import br.com.tupinamba.desafio.repository.impl.UserRepositoryImpl;
+import br.com.tupinamba.desafio.utils.ProjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,9 @@ import java.util.List;
 
 @Service
 public class MainService {
+
+    @Autowired
+    private ProjectUtils utils;
 
     @Autowired
     private UserRepositoryImpl userRepository;
@@ -41,5 +45,14 @@ public class MainService {
 
     public List<UsersEntity> getUsers() {
         return this.userRepository.getUsers();
+    }
+
+    public List<MessageEntity> getMessagesByUser(String user) {
+        UsersEntity oneUser = this.userRepository.getOneUser(user);
+
+        if (oneUser == null)
+            throw this.utils.createException("Não foi encontrado  usuario informado.");
+
+        return this.messageRepository.findByIdSend(oneUser.getId());
     }
 }

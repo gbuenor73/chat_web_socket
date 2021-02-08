@@ -37,4 +37,8 @@ public class MessageRepositoryImpl {
         }
         return messageEntity;
     }
+
+    public List<MessageEntity> findByIdSend(Long id) {
+        return this.messageRepository.findByIdSend(id);
+    }
 }

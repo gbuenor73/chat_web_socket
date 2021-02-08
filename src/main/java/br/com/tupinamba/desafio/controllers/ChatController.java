@@ -12,6 +12,7 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -31,7 +32,10 @@ public class ChatController {
         return ResponseEntity.ok(this.majorService.getUsers());
     }
 
-
+    @GetMapping("/getAllMessages/{user}")
+    public ResponseEntity<List<MessageEntity>> getMessagesByEntity(@PathVariable String user) {
+        return ResponseEntity.ok(this.majorService.getMessagesByUser(user));
+    }
 
     @MessageMapping("chat.register")
     @SendTo("/topic/public")
