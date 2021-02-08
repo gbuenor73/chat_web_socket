@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MajorService {
+public class MainService {
 
     @Autowired
     private UserRepositoryImpl userRepository;
@@ -20,30 +20,19 @@ public class MajorService {
     private MessageRepositoryImpl messageRepository;
 
     public void message(ChatMessageModel chatMessageModel) {
-        try {
+        UsersEntity oneUser = this.userRepository.getOneUser(chatMessageModel.getSender());
 
-            UsersEntity oneUser = this.userRepository.getOneUser(chatMessageModel.getSender());
+        if (oneUser != null)
+            this.messageRepository.insertNewMessage(new MessageEntity(oneUser.getId(), chatMessageModel.getContent()));
 
-            MessageEntity messageEntity =
-                    new MessageEntity(oneUser.getId(), chatMessageModel.getContent());
-
-            this.messageRepository.insertNewMessage(messageEntity);
-
-        } catch (Exception e) {
-            System.out.println("deu errado");
-        }
     }
 
     public void users(ChatMessageModel chatMessageModel) {
-        try {
-            UsersEntity oneUser = this.userRepository.getOneUser(chatMessageModel.getSender());
+        UsersEntity oneUser = this.userRepository.getOneUser(chatMessageModel.getSender());
 
-            if (oneUser == null)
-                this.userRepository.insertNewUser(new UsersEntity(chatMessageModel.getSender()));
+        if (oneUser == null)
+            this.userRepository.insertNewUser(new UsersEntity(chatMessageModel.getSender()));
 
-        } catch (Exception e) {
-            System.out.println("deu errado");
-        }
     }
 
     public List<MessageEntity> getMessages() {

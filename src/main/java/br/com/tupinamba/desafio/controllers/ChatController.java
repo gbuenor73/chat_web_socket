@@ -3,7 +3,7 @@ package br.com.tupinamba.desafio.controllers;
 import br.com.tupinamba.desafio.entyties.MessageEntity;
 import br.com.tupinamba.desafio.entyties.UsersEntity;
 import br.com.tupinamba.desafio.model.ChatMessageModel;
-import br.com.tupinamba.desafio.services.MajorService;
+import br.com.tupinamba.desafio.services.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -19,7 +19,7 @@ import java.util.List;
 public class ChatController {
 
     @Autowired
-    private MajorService majorService;
+    private MainService majorService;
 
     @GetMapping("/getAllMessages")
     public ResponseEntity<List<MessageEntity>> getAllMessagesFromChat() {
@@ -30,6 +30,8 @@ public class ChatController {
     public ResponseEntity<List<UsersEntity>> getAllUsers() {
         return ResponseEntity.ok(this.majorService.getUsers());
     }
+
+
 
     @MessageMapping("chat.register")
     @SendTo("/topic/public")
