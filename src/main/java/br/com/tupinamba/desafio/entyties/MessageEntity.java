@@ -1,6 +1,7 @@
 package br.com.tupinamba.desafio.entyties;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -12,20 +13,19 @@ import java.time.LocalDateTime;
 @ToString
 @Getter
 @Setter
+@NoArgsConstructor
 public class MessageEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long idSend;
-    private Long idReceiver;
     private LocalDateTime dateMessage;
     private String message;
 
 
-    public MessageEntity(Long idSend, Long idReceiver, String message) {
+    public MessageEntity(Long idSend, String message) {
         this.idSend = idSend;
-        this.idReceiver = idReceiver;
         this.message = message;
     }
 }
