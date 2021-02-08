@@ -24,23 +24,8 @@ public class ChatController {
     private MajorService majorService;
 
     @GetMapping("/getAllMessages")
-    public ResponseEntity<List<MessageEntity>> getAllMessages() {
+    public ResponseEntity<List<MessageEntity>> getAllMessagesFromChat() {
         return ResponseEntity.ok(this.majorService.getMessages());
-    }
-
-    @PostMapping("/newMessage")
-    public ResponseEntity<MessageEntity> insertNewMessage(@RequestBody MessageEntity usersEntity) {
-        return ResponseEntity.ok(this.majorService.insertNewMessage(usersEntity));
-    }
-
-    @GetMapping("/getAllUsers")
-    public ResponseEntity<List<UsersEntity>> getAllUsers() {
-        return ResponseEntity.ok(this.majorService.getUsers());
-    }
-
-    @PostMapping("/newUser")
-    public ResponseEntity<UsersEntity> insertNewUser(@RequestBody UsersEntity usersEntity) {
-        return ResponseEntity.ok(this.majorService.insertNewUser(usersEntity));
     }
 
 //    @MessageMapping("/chat/{to}")

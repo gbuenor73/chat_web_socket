@@ -1,6 +1,7 @@
 package br.com.tupinamba.desafio.entyties;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @ToString
 @Getter
 @Setter
+@NoArgsConstructor
 public class MessageEntity {
 
     @Id
