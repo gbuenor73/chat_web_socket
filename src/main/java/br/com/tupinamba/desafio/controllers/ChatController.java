@@ -12,8 +12,6 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -28,46 +26,25 @@ public class ChatController {
         return ResponseEntity.ok(this.majorService.getMessages());
     }
 
-//    @MessageMapping("/chat/{to}")
-//    public void sendMessage(@DestinationVariable String to, MessageModel message) {
-//        System.out.println("handling send message: " + message + " to: " + to);
-//        boolean isExist =
-//    }
+    @GetMapping("/getAllUsers")
+    public ResponseEntity<List<UsersEntity>> getAllUsers() {
+        return ResponseEntity.ok(this.majorService.getUsers());
+    }
 
-        @MessageMapping("chat.register")
+    @MessageMapping("chat.register")
     @SendTo("/topic/public")
     public ChatMessageModel register(@Payload ChatMessageModel chatMessageModel, SimpMessageHeaderAccessor headerAccessor) {
         headerAccessor.getSessionAttributes().put("username", chatMessageModel.getSender());
 
-		try {
-			UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
-			
-        if (oneUser == null)
-            this.majorService.insertNewUser(new UsersEntity(chatMessageModel.getSender(), chatMessageModel.getSender()));
-		
-		} catch (Exception e) {
-		System.out.println("deu errado");	
-		}
-
+        this.majorService.users(chatMessageModel);
         return chatMessageModel;
     }
 
     @MessageMapping("chat.send")
     @SendTo("/topic/public")
     public ChatMessageModel sendMessage(@Payload ChatMessageModel chatMessageModel) {
-		
-		try {
-			
-        UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
 
-        MessageEntity messageEntity =
-                new MessageEntity(oneUser.getId(), 3L, chatMessageModel.getContent());
-		
-        this.majorService.insertNewMessage(messageEntity);
-		} catch (Exception e) {
-		System.out.println("deu errado");	
-		}
-
+        this.majorService.message(chatMessageModel);
         return chatMessageModel;
     }
 
