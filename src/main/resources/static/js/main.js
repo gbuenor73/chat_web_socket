@@ -94,13 +94,21 @@ function onMessageReceived(payload) {
         var usernameText = document.createTextNode(message.sender);
         usernameElement.appendChild(usernameText);
         messageElement.appendChild(usernameElement);
+
     }
 
     var textElement = document.createElement('p');
     var messageText = document.createTextNode(message.content);
+
+    var date = document.createElement('date');
+    var messageDate = document.createTextNode(message.date);
+
     textElement.appendChild(messageText);
+    date.appendChild(messageDate);
 
     messageElement.appendChild(textElement);
+    messageElement.appendChild(date);
+
 
     messageArea.appendChild(messageElement);
     messageArea.scrollTop = messageArea.scrollHeight;
