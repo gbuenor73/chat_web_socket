@@ -34,14 +34,20 @@ public class ChatController {
 //        boolean isExist =
 //    }
 
-    @MessageMapping("chat.register")
+        @MessageMapping("chat.register")
     @SendTo("/topic/public")
     public ChatMessageModel register(@Payload ChatMessageModel chatMessageModel, SimpMessageHeaderAccessor headerAccessor) {
         headerAccessor.getSessionAttributes().put("username", chatMessageModel.getSender());
-        UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
 
+		try {
+			UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
+			
         if (oneUser == null)
             this.majorService.insertNewUser(new UsersEntity(chatMessageModel.getSender(), chatMessageModel.getSender()));
+		
+		} catch (Exception e) {
+		System.out.println("deu errado");	
+		}
 
         return chatMessageModel;
     }
@@ -49,12 +55,18 @@ public class ChatController {
     @MessageMapping("chat.send")
     @SendTo("/topic/public")
     public ChatMessageModel sendMessage(@Payload ChatMessageModel chatMessageModel) {
+		
+		try {
+			
         UsersEntity oneUser = this.majorService.getOneUser(chatMessageModel.getSender());
 
         MessageEntity messageEntity =
                 new MessageEntity(oneUser.getId(), 3L, chatMessageModel.getContent());
-
+		
         this.majorService.insertNewMessage(messageEntity);
+		} catch (Exception e) {
+		System.out.println("deu errado");	
+		}
 
         return chatMessageModel;
     }
