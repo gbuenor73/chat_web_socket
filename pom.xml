@@ -99,6 +99,9 @@
             <properties>
                 <activatedProperties>prd</activatedProperties>
             </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
         </profile>
     </profiles>
 
