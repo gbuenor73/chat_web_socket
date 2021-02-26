@@ -1,4 +1,4 @@
-package br.com.tupinamba.desafio;
+package br.com.gbuenor.chat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

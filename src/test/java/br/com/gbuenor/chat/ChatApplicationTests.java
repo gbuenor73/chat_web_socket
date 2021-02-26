@@ -1,10 +1,10 @@
-package br.com.tupinamba.desafio;
+package br.com.gbuenor.chat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DesafioChatApplicationTests {
+class ChatApplicationTests {
 
     @Test
     void contextLoads() {

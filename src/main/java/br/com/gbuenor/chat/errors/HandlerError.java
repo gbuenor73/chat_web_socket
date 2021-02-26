@@ -1,6 +1,6 @@
-package br.com.tupinamba.desafio.errors;
+package br.com.gbuenor.chat.errors;
 
-import br.com.tupinamba.desafio.exceptions.CustomException;
+import br.com.gbuenor.chat.exceptions.CustomException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

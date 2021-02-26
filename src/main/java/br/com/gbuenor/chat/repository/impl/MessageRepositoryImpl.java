@@ -1,8 +1,8 @@
-package br.com.tupinamba.desafio.repository.impl;
+package br.com.gbuenor.chat.repository.impl;
 
-import br.com.tupinamba.desafio.entyties.MessageEntity;
-import br.com.tupinamba.desafio.repository.MessageRepository;
-import br.com.tupinamba.desafio.utils.ProjectUtils;
+import br.com.gbuenor.chat.entyties.MessageEntity;
+import br.com.gbuenor.chat.utils.ProjectUtils;
+import br.com.gbuenor.chat.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
