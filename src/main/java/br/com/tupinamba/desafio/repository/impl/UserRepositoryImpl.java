@@ -43,4 +43,13 @@ public class UserRepositoryImpl {
         }
         return null;
     }
+
+    public UsersEntity getUserbyId(Long id) {
+        try {
+            return this.userRepository.findById(id).orElseThrow(Exception::new);
+        } catch (Exception e) {
+            this.logger.info("Usuario não encontrado.");
+        }
+        return null;
+    }
 }
