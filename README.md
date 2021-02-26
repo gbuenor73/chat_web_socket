@@ -8,15 +8,15 @@ Nova alteração torna necessario informar as seguinte variaveis de ambiente.
 ## Links para acesso:
 ### Ambiente de desenvolvimento e teste:
 <br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/getAllUsers
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/getAllMessages
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/getAllMessages/(Nick)
+<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getAllUsers
+<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getAllMessages
+<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getAllMessages/(Nick)
 <br> Nick -> Usuario informado antes de enviar a mensagem no chat 
 
 ### Ambiente de produção:
 
 <br>https://desafio-chat-tupinamba.herokuapp.com/chat
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat/getAllUsers
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat/getAllMessages
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat/getAllMessages/(Nick)
+<br>https://desafio-chat-tupinamba.herokuapp.com/chat/more/getAllUsers
+<br>https://desafio-chat-tupinamba.herokuapp.com/chat/more/getAllMessages
+<br>https://desafio-chat-tupinamba.herokuapp.com/chat/more/getAllMessages/(Nick)
 <br> Nick -> Usuario informado antes de enviar a mensagem no chat
