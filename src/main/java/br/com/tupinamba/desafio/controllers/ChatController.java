@@ -13,12 +13,15 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 @Controller
+@RequestMapping("/more")
 public class ChatController {
 
     @Autowired
@@ -26,17 +29,30 @@ public class ChatController {
 
     @GetMapping("/getAllMessages")
     public ResponseEntity<List<MessageEntity>> getAllMessagesFromChat() {
-        return ResponseEntity.ok(this.majorService.getMessages());
+        List<MessageEntity> messages = this.majorService.getMessages();
+        messages.stream().forEach(m -> m.add(linkTo(methodOn(ChatController.class).getUser(m.getIdSend())).withSelfRel()));
+        return ResponseEntity.ok(messages);
     }
 
     @GetMapping("/getAllUsers")
     public ResponseEntity<List<UsersEntity>> getAllUsers() {
-        return ResponseEntity.ok(this.majorService.getUsers());
+        List<UsersEntity> users = this.majorService.getUsers();
+        users.stream().forEach(u -> u.add(linkTo(methodOn(ChatController.class).getUser(u.getId())).withSelfRel()));
+        return ResponseEntity.ok(users);
     }
 
-    @GetMapping("/getAllMessages/{user}")
+    @GetMapping("/getUser/{id}")
+    public ResponseEntity<UsersEntity> getUser(@PathVariable("id") Long id) {
+        UsersEntity user = this.majorService.getUser(id);
+        user.add(linkTo(methodOn(ChatController.class).getMessagesByEntity(user.getNick())).withSelfRel());
+        return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("/getMessages/{user}")
     public ResponseEntity<List<MessageEntity>> getMessagesByEntity(@PathVariable String user) {
-        return ResponseEntity.ok(this.majorService.getMessagesByUser(user));
+        List<MessageEntity> messagesByUser = this.majorService.getMessagesByUser(user);
+        messagesByUser.stream().forEach(m -> m.add(linkTo(methodOn(ChatController.class).getAllMessagesFromChat()).withSelfRel()));
+        return ResponseEntity.ok(messagesByUser);
     }
 
     @MessageMapping("chat.register")
