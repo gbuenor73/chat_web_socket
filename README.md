@@ -4,7 +4,7 @@ Nas ultimas atualizações:
 * Mudanças visuais como, backgroud e cores da aplicação.
 * Implementação do HATEOAS.
 
-Nova alteração torna necessario informar as seguinte variaveis de ambiente.
+Para o correto funcionamento da aplicação é necessario informar as seguinte variaveis de ambiente.
 
 * AMB_DPL= ambiente de deploy (lcl, dev ou pdr)
 * BD_PASS= senha do banco de dados
