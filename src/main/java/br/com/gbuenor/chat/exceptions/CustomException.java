@@ -1,4 +1,4 @@
-package br.com.tupinamba.desafio.exceptions;
+package br.com.gbuenor.chat.exceptions;
 
 import lombok.*;
 

@@ -1,9 +1,9 @@
-package br.com.tupinamba.desafio.controllers;
+package br.com.gbuenor.chat.controllers;
 
-import br.com.tupinamba.desafio.entyties.MessageEntity;
-import br.com.tupinamba.desafio.entyties.UsersEntity;
-import br.com.tupinamba.desafio.model.ChatMessageModel;
-import br.com.tupinamba.desafio.services.MainService;
+import br.com.gbuenor.chat.entyties.MessageEntity;
+import br.com.gbuenor.chat.entyties.UsersEntity;
+import br.com.gbuenor.chat.model.ChatMessageModel;
+import br.com.gbuenor.chat.services.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
