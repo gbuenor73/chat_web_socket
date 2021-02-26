@@ -1,5 +1,9 @@
 # Projeto de teste para entrevista da empresa Tupinambá Energia
 
+Nas ultimas atualizações:
+* Mudanças visuais como, backgroud e cores da aplicação.
+* Implementação do HATEOAS.
+
 Nova alteração torna necessario informar as seguinte variaveis de ambiente.
 
 * AMB_DPL= ambiente de deploy (lcl, dev ou pdr)
