@@ -1,8 +1,8 @@
-package br.com.tupinamba.desafio.repository.impl;
+package br.com.gbuenor.chat.repository.impl;
 
-import br.com.tupinamba.desafio.entyties.UsersEntity;
-import br.com.tupinamba.desafio.repository.UserRepository;
-import br.com.tupinamba.desafio.utils.ProjectUtils;
+import br.com.gbuenor.chat.entyties.UsersEntity;
+import br.com.gbuenor.chat.utils.ProjectUtils;
+import br.com.gbuenor.chat.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

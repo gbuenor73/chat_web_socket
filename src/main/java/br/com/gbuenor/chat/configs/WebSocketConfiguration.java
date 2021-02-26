@@ -1,4 +1,4 @@
-package br.com.tupinamba.desafio.configs;
+package br.com.gbuenor.chat.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

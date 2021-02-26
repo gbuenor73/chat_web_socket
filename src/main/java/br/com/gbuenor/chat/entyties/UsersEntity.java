@@ -1,4 +1,4 @@
-package br.com.tupinamba.desafio.entyties;
+package br.com.gbuenor.chat.entyties;
 
 import lombok.Getter;
 import lombok.Setter;

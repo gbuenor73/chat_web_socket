@@ -1,4 +1,4 @@
-package br.com.tupinamba.desafio.model;
+package br.com.gbuenor.chat.model;
 
 import lombok.Getter;
 import lombok.Setter;

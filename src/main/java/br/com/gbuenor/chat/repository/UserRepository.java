@@ -1,6 +1,6 @@
-package br.com.tupinamba.desafio.repository;
+package br.com.gbuenor.chat.repository;
 
-import br.com.tupinamba.desafio.entyties.UsersEntity;
+import br.com.gbuenor.chat.entyties.UsersEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

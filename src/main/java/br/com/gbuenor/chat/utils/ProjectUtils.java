@@ -1,4 +1,4 @@
-package br.com.tupinamba.desafio.utils;
+package br.com.gbuenor.chat.utils;
 
 import org.springframework.stereotype.Component;
 

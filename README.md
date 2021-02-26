@@ -1,6 +1,10 @@
-# Projeto de teste para entrevista da empresa Tupinambá Energia
+# Projeto de exemplo de chat global + APi para acesso as informações do chat
 
-Nova alteração torna necessario informar as seguinte variaveis de ambiente.
+Nas ultimas atualizações:
+* Mudanças visuais como, backgroud e cores da aplicação.
+* Implementação do HATEOAS.
+
+Para o correto funcionamento da aplicação é necessario informar as seguinte variaveis de ambiente.
 
 * AMB_DPL= ambiente de deploy (lcl, dev ou pdr)
 * BD_PASS= senha do banco de dados

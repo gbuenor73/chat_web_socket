@@ -1,11 +1,11 @@
-package br.com.tupinamba.desafio.services;
+package br.com.gbuenor.chat.services;
 
-import br.com.tupinamba.desafio.entyties.MessageEntity;
-import br.com.tupinamba.desafio.entyties.UsersEntity;
-import br.com.tupinamba.desafio.model.ChatMessageModel;
-import br.com.tupinamba.desafio.repository.impl.MessageRepositoryImpl;
-import br.com.tupinamba.desafio.repository.impl.UserRepositoryImpl;
-import br.com.tupinamba.desafio.utils.ProjectUtils;
+import br.com.gbuenor.chat.entyties.UsersEntity;
+import br.com.gbuenor.chat.entyties.MessageEntity;
+import br.com.gbuenor.chat.model.ChatMessageModel;
+import br.com.gbuenor.chat.repository.impl.MessageRepositoryImpl;
+import br.com.gbuenor.chat.repository.impl.UserRepositoryImpl;
+import br.com.gbuenor.chat.utils.ProjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
