@@ -55,4 +55,8 @@ public class MainService {
 
         return this.messageRepository.findByIdSend(oneUser.getId());
     }
+
+    public UsersEntity getUser(Long id) {
+        return this.userRepository.getUserbyId(id);
+    }
 }
