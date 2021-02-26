@@ -11,20 +11,20 @@ Para o correto funcionamento da aplicação é necessario informar as seguinte v
 
 ## Links para acesso:
 ### Ambiente de desenvolvimento e teste:
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getAllUsers
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getUser/{Id}
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getAllMessages
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getMessages/{Nick}
+<br>https://gbuenor-chat-dev.herokuapp.com/chat
+<br>https://gbuenor-chat-dev.herokuapp.com/chat/more/getAllUsers
+<br>https://gbuenor-chat-dev.herokuapp.com/chat/more/getUser/{Id}
+<br>https://gbuenor-chat-dev.herokuapp.com/chat/more/getAllMessages
+<br>https://gbuenor-chat-dev.herokuapp.com/chat/more/getMessages/{Nick}
 <br> Id -> Id referente ao usuario, caso não possua procurar em getAllUsers
 <br> Nick -> Usuario informado antes de enviar a mensagem no chat 
 
 ### Ambiente de produção:
 
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat/more/getAllUsers
-<br>https://desafio-chat-tupinamba-hml.herokuapp.com/chat/more/getUser/{Id}
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat/more/getAllMessages
-<br>https://desafio-chat-tupinamba.herokuapp.com/chat/more/getMessages/(Nick)
+<br>https://gbuenor-chat.herokuapp.com/chat
+<br>https://gbuenor-chat.herokuapp.com/chat/more/getAllUsers
+<br>https://gbuenor-chat.herokuapp.com/chat/more/getUser/{Id}
+<br>https://gbuenor-chat.herokuapp.com/chat/more/getAllMessages
+<br>https://gbuenor-chat.herokuapp.com/chat/more/getMessages/(Nick)
 <br> Id -> Id referente ao usuario, caso não possua procurar em getAllUsers
 <br> Nick -> Usuario informado antes de enviar a mensagem no chat
