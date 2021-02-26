@@ -1,4 +1,4 @@
-# Projeto de teste para entrevista da empresa Tupinambá Energia
+# Projeto de exemplo de chat global + APi para acesso as informações do chat
 
 Nas ultimas atualizações:
 * Mudanças visuais como, backgroud e cores da aplicação.
