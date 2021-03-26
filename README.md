@@ -28,3 +28,10 @@ Para o correto funcionamento da aplicação é necessario informar as seguinte v
 <br>https://gbuenor-chat.herokuapp.com/chat/more/getMessages/(Nick)
 <br> Id -> Id referente ao usuario, caso não possua procurar em getAllUsers
 <br> Nick -> Usuario informado antes de enviar a mensagem no chat
+
+
+## Change Log
+### Version's
+* 1.2.0
+    * Implementação do <a href=https://flywaydb.org/>flyway</a> para migração do banco de dados
+    * Alteração do apontamento do banco de dados para AWS.

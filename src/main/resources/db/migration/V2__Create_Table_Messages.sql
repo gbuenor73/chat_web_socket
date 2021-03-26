@@ -1,0 +1,7 @@
+CREATE TABLE messages (
+    id INTEGER(30) UNSIGNED AUTO_INCREMENT NOT NULL,
+    id_send INTEGER(30) UNSIGNED NOT NULL,
+    message VARCHAR(255) NOT NULL,
+    date_message DATETIME NOT NULL,
+    PRIMARY KEY (id)
+)
