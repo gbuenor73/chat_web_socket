@@ -1,0 +1,1 @@
+ALTER table messages ADD constraint foreign key(id_send) references users(id);
