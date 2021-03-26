@@ -1,39 +1,20 @@
-user: tupi;
-password: tupi123;
+user: websocket;
+password: ws123456;
 
 show databases;
-use teste_tupi;
+
+use websocket;
 show tables;
 
-drop table users;
-CREATE TABLE users (
-    id INTEGER(30) UNSIGNED AUTO_INCREMENT NOT NULL,
-    nick VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
-)  ENGINE=INNODB;
 SELECT
     *
 FROM
     users;
-insert into users (name,nick)values('Gabriel', 'bueno');
-
-drop table messages;
-CREATE TABLE messages (
-    id INTEGER(30) UNSIGNED AUTO_INCREMENT NOT NULL,
-    id_send INTEGER(30) UNSIGNED NOT NULL,
-    message VARCHAR(255) NOT NULL,
-    date_message DATETIME NOT NULL,
-    PRIMARY KEY (id)
-)  ENGINE=INNODB;
-ALTER table messages ADD constraint foreign key(id_send) references users(id);
 
 SELECT
     *
 FROM
     messages;
-
-insert into messages (id_send, id_receiver, message, date_message)
-values(1,1,'TESTE DE MENSAGEM', current_timestamp());
 
 SELECT
     *

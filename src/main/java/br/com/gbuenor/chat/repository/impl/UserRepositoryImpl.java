@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class UserRepositoryImpl {
 
-    Logger logger = Logger.getLogger("br.com.tupinamba.desafio.repository.impl.UserRepositoryImpl");
+    Logger logger = Logger.getLogger("br.com.gbuenor.chat.repository.impl.UserRepositoryImpl");
 
     @Autowired
     private UserRepository userRepository;

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(scanBasePackages = "br.com.tupinamba.desafio")
+@SpringBootApplication(scanBasePackages = "br.com.gbuenor.chat")
 @EnableTransactionManagement
 @EnableJpaRepositories
 @EnableAutoConfiguration

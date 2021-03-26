@@ -15,7 +15,7 @@ public class MessageRepositoryImpl {
     @Autowired
     private MessageRepository messageRepository;
 
-    Logger logger = Logger.getLogger("br.com.tupinamba.desafio.repository.impl.MessageRepositoryImpl");
+    Logger logger = Logger.getLogger("br.com.gbuenor.chat.repository.impl.MessageRepositoryImpl");
 
     @Autowired
     private ProjectUtils utils;
