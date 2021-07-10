@@ -1,3 +1,5 @@
+## Obs. Este sistema está fora do ar no momento, caso queira testar, favor entrar em contao comigo para a liberação do mesmo
+
 # Projeto de exemplo de chat global + APi para acesso as informações do chat
 
 Nas ultimas atualizações:
